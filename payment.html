@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f2f4f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .payment-container {
+            background: white;
+            width: 400px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .amount {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin: 12px 0 6px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .row div {
+            width: 50%;
+        }
+
+        .pay-button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .pay-button:hover {
+            background: #1d4ed8;
+        }
+
+        .secure {
+            text-align: center;
+            margin-top: 15px;
+            color: #777;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="payment-container">
+
+        <h1>Payment</h1>
+
+        <div class="amount">₹2,500</div>
+
+        <label for="name">Cardholder Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <label for="card">Card Number</label>
+        <input type="text" id="card" placeholder="1234 5678 9012 3456" maxlength="19">
+
+        <div class="row">
+            <div>
+                <label for="expiry">Expiry Date</label>
+                <input type="text" id="expiry" placeholder="MM/YY">
+            </div>
+
+            <div>
+                <label for="cvv">CVV</label>
+                <input type="password" id="cvv" placeholder="***" maxlength="3">
+            </div>
+        </div>
+
+        <label for="method">Payment Method</label>
+        <select id="method">
+            <option>Credit Card</option>
+            <option>Debit Card</option>
+            <option>UPI</option>
+            <option>Net Banking</option>
+        </select>
+
+        <button class="pay-button" onclick="makePayment()">
+            Pay ₹2,500
+        </button>
+
+        <p class="secure">🔒 Secure Payment</p>
+
+    </div>
+
+    <script>
+        function makePayment() {
+            alert("Payment processing...");
+        }
+    </script>
+
+</body>
+</html>
